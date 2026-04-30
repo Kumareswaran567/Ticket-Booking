@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinema Ticket Booking</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+
+<!-- LOGIN -->
+<div class="page active" id="page1">
+<div class="card">
+<h1>🎬 Cinema Login</h1>
+<input type="email" id="loginEmail" placeholder="Enter Email">
+<input type="password" placeholder="Enter Password">
+<button onclick="login()">Login</button>
+</div>
+</div>
+
+<!-- MOVIE PAGE -->
+<div class="page" id="page2">
+<h1>🎥 Select Movie</h1>
+
+<div class="movie-grid">
+<div class="movie" onclick="selectMovie('Avatar')">Avatar</div>
+<div class="movie" onclick="selectMovie('Leo')">Leo</div>
+<div class="movie" onclick="selectMovie('Jailer')">Jailer</div>
+<div class="movie" onclick="selectMovie('Batman')">Batman</div>
+<div class="movie" onclick="selectMovie('Dune')">Dune</div>
+<div class="movie" onclick="selectMovie('Interstellar')">Interstellar</div>
+</div>
+
+<p class="selected-text">Selected Movie: <span id="movieName">None</span></p>
+
+<div class="btn-group">
+<button onclick="nextPage(3)">Next</button>
+<button onclick="nextPage(1)">Back</button>
+</div>
+</div>
+
+<!-- SEAT PAGE -->
+<div class="page" id="page3">
+<h1>💺 Select Seats</h1>
+<h3 class="screen">SCREEN THIS WAY</h3>
+
+<div class="seats" id="seatContainer"></div>
+
+<div class="btn-group">
+<button onclick="nextPage(4)">Next</button>
+<button onclick="nextPage(2)">Back</button>
+</div>
+</div>
+
+<!-- PAYMENT -->
+<div class="page" id="page4">
+<div class="card">
+<h1>💳 Payment</h1>
+
+<input type="text" placeholder="ATM Card Number">
+<input type="password" placeholder="PIN Number">
+<input type="email" id="payEmail" placeholder="Email ID">
+
+<p>Total Amount: ₹<span id="amount">0</span></p>
+
+<div class="btn-group">
+<button onclick="nextPage(5)">Pay Now</button>
+<button onclick="nextPage(3)">Back</button>
+</div>
+</div>
+</div>
+
+<!-- TICKET -->
+<div class="page" id="page5">
+<div class="ticket">
+<h1>🎟 Movie Ticket</h1>
+<hr>
+
+<h2 id="ticketMovie">Movie Name</h2>
+<p>📅 Date: Today</p>
+<p>🕒 Time: 7:30 PM</p>
+<p>💺 Seats: <span id="ticketSeats"></span></p>
+<p>💰 Paid: ₹<span id="ticketAmount"></span></p>
+<p>📧 Email: <span id="ticketEmail"></span></p>
+
+<div class="barcode"></div>
+
+<div class="btn-group">
+<button onclick="nextPage(1)">Home</button>
+<button onclick="nextPage(4)">Back</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
